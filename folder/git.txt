@@ -1,0 +1,281 @@
+C:\Users\hp>git --version
+git version 2.18.0.windows.1
+////to check the version of git
+
+
+C:\Users\hp\Desktop>cd myrepo
+The system cannot find the path specified.
+////cd is used to change directories
+
+
+C:\Users\hp\Desktop\myrepo>cd ..
+////go to privious folder
+
+C:\Users\hp\Desktop>cd myrepo
+
+
+C:\Users\hp\Desktop\myrepo>git init
+Initialized empty Git repository in C:/Users/hp/Desktop/myrepo/.git/
+////to create a new local repository
+
+
+C:\Users\hp\Desktop\myrepo>git remote add origin https://github.com/harshkukreja95/myrepofile.git
+////If you haven't connected your local repository to a remote server, add the server to be able to push to it
+
+
+C:\Users\hp\Desktop\myrepo>git remote -v
+origin  https://github.com/harshkukreja95/myrepofile.git (fetch)
+origin  https://github.com/harshkukreja95/myrepofile.git (push)
+////List all currently configured remote repositories
+
+
+C:\Users\hp\Desktop\myrepo>git remote remove origin
+////remove origin
+
+
+C:\Users\hp\Desktop\myrepo>git remote -v
+
+C:\Users\hp\Desktop\myrepo>git remote add myorigin https://github.com/harshkukreja95/myrepofile.git
+
+C:\Users\hp\Desktop\myrepo>git remote -v
+myorigin        https://github.com/harshkukreja95/myrepofile.git (fetch)
+myorigin        https://github.com/harshkukreja95/myrepofile.git (push)
+////same
+
+
+C:\Users\hp\Desktop\myrepo>git status
+On branch master
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        first.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+///////List the files you've changed and those you still need to add or commit:
+
+
+
+C:\Users\hp\Desktop\myrepo>git add  first.txt
+//////Add one or more files to staging (index):
+
+
+C:\Users\hp\Desktop\myrepo>git add --all
+////add all files
+
+
+C:\Users\hp\Desktop\myrepo>git add .
+////add all files
+
+
+C:\Users\hp\Desktop\myrepo>git rm --cached first.txt
+rm 'first.txt'
+/////remove file 
+
+
+C:\Users\hp\Desktop\myrepo>git commit -m "Initial Commit"
+[master (root-commit) 85a55f5] Initial Commit
+ 2 files changed, 3 insertions(+)
+ create mode 100644 .gitignore
+ create mode 100644 first.txt
+////Commit changes to head (but not yet to the remote repository
+
+
+
+C:\Users\hp\Desktop\myrepo>git push myorigin master
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (4/4), 288 bytes | 96.00 KiB/s, done.
+Total 4 (delta 0), reused 0 (delta 0)
+To https://github.com/harshkukreja95/myrepofile.git
+ * [new branch]      master -> master
+///////Send changes to the master branch of your remote repository
+
+
+...............ssh...................... 
+
+------------in ssh no need add user and pass for every commit but In https do-----------
+
+//comand for ssh key/////
+in got bash
+ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+cd .ssh
+clip < id_rsa.pub
+///
+--------------------------- my key ------------------
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDImtysTUwm6+Nw24xerWc4AxGO2LKsDmKLLFvjjzfQdTamqIjMUQRW32DBn9AKb26BDGXrk00AH8VY2youivy8//pSOoIvGFy2i1FDxOtWpWiMMQJEcdUvY9YHxFIMB8MxUfZr6HwDkHQpaMK5H0FmYm1uar1MwAnhLX7hUUR44BoreAzDmIIWrvCyFKYFiDRT6lhSHBBzcW4LX+/EAiPFrodhjiIyzJDZQy6QNHtaYXUPcbdpGlxjBbaPGUkBwYpEe2JC3vX/EvLsFL67Ylmki6HKp1YAaDGTNm5ZtmZCqnIWH4ZkYg86SsJGBYLQFs0L75tYjxlaSj2SdBQ/4DcW+GwtY/ez/Exx2hGHKGK4mBeCtret6qthZO9HDTpMUOx5vnKFg7ubB2MX4PZCwKPegejmo+USD0JhTfXA0gqKftyrZwQ2rLMNXyTVPLdMrdpWodaEC6NefY+PgpPEVYC8c0/X67twgRwVYGgTAL9i4OKmSDNZILrn8eG3ONCbJTAMk/fB8lN98KgbQqNV15vJrMeK7eHFDh+d9iq/SV5uspBhuPL8J7mk8IBpOxDcfnU76bzv8eLOyAVKCHYFM1OUHshKvhB7r8VQP5EBNWvcu/+0Izx5pPu5zVFWBDYMtk8cTYnbYozwY4cFY2c1VmFjYvMqNNLAXHXTB4zg+Qp3uw== harshkukreja@hotmail.com
+---------------------------------------------------------------
+add on GitHub account
+
+
+
+////remove privious my origin by git remote remove myorigin 
+
+C:\Users\hp\Desktop\myrepo>git remote add myorigin git@github.com:harshkukreja95/myrepofile.git
+////ssh link added
+
+
+
+
+C:\Users\hp\Desktop\myrepo>git remote -v
+myorigin        git@github.com:harshkukreja95/myrepofile.git (fetch)
+myorigin        git@github.com:harshkukreja95/myrepofile.git (push)
+
+C:\Users\hp\Desktop\myrepo>git status
+On branch master
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        new file:   newfile.txt
+
+
+C:\Users\hp\Desktop\myrepo>git commit -m "new file added"
+[master 90a27da] new file added
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 newfile.txt
+
+C:\Users\hp\Desktop\myrepo>git status
+On branch master
+nothing to commit, working tree clean
+
+C:\Users\hp\Desktop\myrepo>git log
+commit 90a27da4e52090cebaf7dc799ae540b0f92020a3 (HEAD -> master)
+Author: harshkukreja95 <harshkukreja@hotmail.com>
+Date:   Wed Aug 1 20:00:25 2018 +0530
+
+    new file added
+
+commit 85a55f54a3e00adf333fff035481c23057834c36
+Author: harshkukreja95 <harshkukreja@hotmail.com>
+Date:   Wed Aug 1 00:23:33 2018 +0530
+
+    Initial Commit
+
+////now no pass needed because of ssh
+
+...............branch......................
+
+C:\Users\hp\Desktop\myrepo>git branch
+* master
+////to check current branch
+
+
+C:\Users\hp\Desktop\myrepo>git branch mybranch
+////creating new branch
+
+
+C:\Users\hp\Desktop\myrepo>git branch
+* master
+  mybranch
+///checking
+
+
+C:\Users\hp\Desktop\myrepo>git checkout mybranch
+Switched to branch 'mybranch'
+////switched to created(mybranch) branch
+
+
+C:\Users\hp\Desktop\myrepo>git branch
+  master
+* mybranch
+//checked
+
+
+C:\Users\hp\Desktop\myrepo>git checkout -b newbranch
+Switched to a new branch 'newbranch'
+////switched with creating new -b for creating
+
+
+C:\Users\hp\Desktop\myrepo>git branch
+  master
+  mybranch
+* newbranch
+
+C:\Users\hp\Desktop\myrepo>git checkout master
+Switched to branch 'master'
+
+C:\Users\hp\Desktop\myrepo>git branch
+* master
+  mybranch
+  newbranch
+//checked
+
+
+...............branch file......................
+
+C:\Users\hp\Desktop\myrepo>git branch
+  master
+  mybranch
+* newbranch
+
+C:\Users\hp\Desktop\myrepo>echo > newfilebranch.txt
+////creating branch file with echo < (file name)
+
+////ad file to indexed
+
+C:\Users\hp\Desktop\myrepo>git commit -m "branch file created"
+[newbranch 715273f] branch file created
+ 1 file changed, 1 insertion(+)
+ create mode 100644 newfilebranch.txt
+
+C:\Users\hp\Desktop\myrepo>git push myorigin newbranch
+Warning: Permanently added the RSA host key for IP address '64:ff9b::c01e:fd71' to the list of known hosts.
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 291 bytes | 291.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To github.com:harshkukreja95/myrepofile.git
+ * [new branch]      newbranch -> newbranch
+/////check new file in branch created
+
+
+C:\Users\hp\Desktop\myrepo>git checkout mybranch
+Switched to branch 'mybranch'
+///switched
+
+
+C:\Users\hp\Desktop\myrepo>git merge newbranch
+Updating 90a27da..715273f
+Fast-forward
+ newfilebranch.txt | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 newfilebranch.txt
+////merging a branch
+
+C:\Users\hp\Desktop\myrepo>git push myorigin mybranch
+Total 0 (delta 0), reused 0 (delta 0)
+To github.com:harshkukreja95/myrepofile.git
+ * [new branch]      mybranch -> mybranch
+//after pushing watch the results on github
+
+
+
+...........cloning(with ssh clone url).....................
+////add a folder on desktop like I do (clone myrepo)
+C:\Users\hp\Desktop\myrepo>cd ..
+
+C:\Users\hp\Desktop>cd clone myrepo
+
+C:\Users\hp\Desktop\clone myrepo>git clone (ssh url)
+////////cloning completed
+
+
+...........fork (if like someone's repo then copying it is fork)..........
+
+///open someone's repo click on fork to copy that repo
+/// now its your copy
+
+.................pull request..............................
+if some one create fork of yours and create a pull request after change something your can accept that changes
+to accept it
+
+///accept or not your choice
+
+
+........................git gui..................................
